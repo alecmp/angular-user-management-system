@@ -1,0 +1,36 @@
+<h2>{{title}}</h2>
+<table class="table table-dark">
+
+  <tr>
+    <th>Name</th>
+    <td>{{User.name}}</td>
+  </tr>
+  <tr>
+    <th>Cognome</th>
+    <td>{{User.lastname}}</td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>{{User.email}}</td>
+  </tr>
+  <tr>
+    <th>Telefono</th>
+    <td>{{User.phone}}</td>
+  </tr>
+  <tr>
+    <th>Provincia</th>
+    <td>{{User.province}}</td>
+  </tr>
+  <tr>
+    <th>Codice fiscale</th>
+    <td>{{User.fiscalCode}}</td>
+  </tr>
+  <tr>
+    <th>Età</th>
+    <td>{{User.age}}</td>
+  </tr>
+  <tfoot>
+  <tr><td colspan="2" class="text-center">
+    <button (click) = "backToUsers()" class="btn btn-primary">Back</button></td> </tr>
+  </tfoot>
+</table>
