@@ -1,47 +1,45 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
 
-  <H1>
-    login works!
-  </H1>
 
-  <form name="loginForm" #f="ngForm" (ngSubmit)="signIn(f)">
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input required class="form-control" email type="email" ngModel #email="ngModel" name="email" id="email">
-      <div *ngIf="email.dirty && email.touched && email.invalid">
 
-        <div class="alert-danger" *ngIf="email.errors.required">
-          The emailis required
-        </div>
-        <div class="alert-danger" *ngIf="email.errors.email">
-          The velue must be a valid email.
+    <form name="loginForm" #f="ngForm" (ngSubmit)="signIn(f)">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input required class="form-control" email type="email" ngModel #email="ngModel" name="email" id="email">
+        <div *ngIf="email.dirty && email.touched && email.invalid">
+
+          <div class="alert-danger" *ngIf="email.errors.required">
+            The emailis required
+          </div>
+          <div class="alert-danger" *ngIf="email.errors.email">
+            The velue must be a valid email.
+          </div>
         </div>
       </div>
-    </div>
 
 
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input required class="form-control" minlength="6" ngModel type="password" #password="ngModel" name="password"
+               id="password">
+        <div *ngIf="password.dirty && password.touched && password.invalid">
 
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input required class="form-control" minlength="6" ngModel type="password" #password="ngModel" name="password" id="password">
-      <div *ngIf="password.dirty && password.touched && password.invalid">
+          <div class="alert-danger" *ngIf="password.errors.required">
+            The field first name is required
+          </div>
+          <div class="alert-danger" *ngIf="password.errors.minlength">
+            The min length of password {{password.errors.minlength.requiredLength }} chars
+          </div>
 
-        <div class="alert-danger" *ngIf="password.errors.required">
-          The field first name is required
         </div>
-        <div class="alert-danger" *ngIf="password.errors.minlength">
-          The min length of password {{password.errors.minlength.requiredLength }} chars
-        </div>
-
       </div>
-    </div>
 
-    <div class="form-group text-center">
-      <button [disabled]="!f.valid" class="btn btn-primary">Log in</button>
-    </div>
+      <div class="form-group text-center">
+        <button [disabled]="!f.valid" class="btn btn-primary">Log in</button>
+      </div>
 
 
-  </form>
-</div>
+    </form>
+  </div>
 </div>

@@ -15,13 +15,14 @@ export class AuthService {
 
   }
 
-  signIn(email: string, password: String) {
+  signIn(email: string, password: string) {
     localStorage.setItem('token', email);
     return true;
   }
 
-  signUp(username: string, email: String, password: String) {
-
+  signUp(username: string, email: string, password: string) {
+    localStorage.setItem('token', email);
+    return true;
   }
 
   logout() {
